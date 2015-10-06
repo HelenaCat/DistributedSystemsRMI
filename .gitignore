@@ -40,3 +40,4 @@ Thumbs.db
 ################################
 .classpath
 .settings/org.eclipse.jdt.core.prefs
+.metadata
