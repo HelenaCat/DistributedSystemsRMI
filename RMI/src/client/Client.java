@@ -27,7 +27,7 @@ public class Client extends AbstractTestBooking {
 
 		// An example reservation scenario on car rental company 'Hertz' would be...
 
-		Registry registry = LocateRegistry.getRegistry(args[0]);
+		Registry registry = LocateRegistry.getRegistry(); //args[0]
 		Client client = new Client("simpleTrips", carRentalCompanyName, registry);
 
 		client.run();
