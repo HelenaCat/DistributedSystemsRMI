@@ -11,7 +11,9 @@ import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class CarRentalCompany {
+import client.ReservationConstraints;
+
+public class CarRentalCompany implements ICarRentalCompany{
 
 	private static Logger logger = Logger.getLogger(CarRentalCompany.class.getName());
 	
