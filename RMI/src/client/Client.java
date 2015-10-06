@@ -118,8 +118,8 @@ public class Client extends AbstractTestBooking {
 	 */
 	@Override
 	protected List<Reservation> getReservationsByRenter(String clientName) throws Exception {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("TODO");
+		List<Reservation> reservations = stub.getAllReservationsByClient(clientName);
+		return reservations;
 	}
 
 	/**
@@ -134,7 +134,6 @@ public class Client extends AbstractTestBooking {
 	 */
 	@Override
 	protected int getNumberOfReservationsForCarType(String carType) throws Exception {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("TODO");
+		return stub.getNumberOfReservationsForCarType(carType);
 	}
 }

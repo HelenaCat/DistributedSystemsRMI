@@ -141,4 +141,28 @@ public class CarRentalCompany implements ICarRentalCompany{
 		logger.log(Level.INFO, "<{0}> Cancelling reservation {1}", new Object[]{name, res.toString()});
 		getCar(res.getCarId()).removeReservation(res);
 	}
+	
+	public List<Reservation> getAllReservationsByClient(String client){
+		List<Reservation> reservations = new LinkedList<Reservation>();
+		for (Car car : cars) {
+			for (Reservation reservation: car.getReservations()){
+				if(reservation.getCarRenter().equals(client)){
+					reservations.add(reservation);
+				}
+			}
+		}
+		return reservations;
+	}
+	
+	public int getNumberOfReservationsForCarType(String carType){
+		List<Reservation> reservations = new LinkedList<Reservation>();
+		for (Car car : cars) {
+			for (Reservation reservation: car.getReservations()){
+				if(reservation.getCarType().equals(carType)){
+					reservations.add(reservation);
+				}
+			}
+		}
+		return reservations.size();
+	}
 }
