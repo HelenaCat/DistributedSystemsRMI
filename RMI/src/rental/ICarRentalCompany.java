@@ -10,15 +10,15 @@ import client.ReservationConstraints;
 
 public interface ICarRentalCompany extends Remote{
 
-	public boolean isAvailable(String carTypeName, Date start, Date end);
+	public boolean isAvailable(String carTypeName, Date start, Date end) throws RemoteException;
 	
-	public Set<CarType> getAvailableCarTypes(Date start, Date end);
+	public Set<CarType> getAvailableCarTypes(Date start, Date end) throws RemoteException;
 	
-	public Quote createQuote(ReservationConstraints constraints, String client) throws ReservationException;
+	public Quote createQuote(ReservationConstraints constraints, String client) throws ReservationException, RemoteException;
 	
-	public Reservation confirmQuote(Quote quote) throws ReservationException;
+	public Reservation confirmQuote(Quote quote) throws ReservationException, RemoteException;
 	
-	public List<Reservation> getAllReservationsByClient(String client);
+	public List<Reservation> getAllReservationsByClient(String client) throws RemoteException;
 	
-	public int getNumberOfReservationsForCarType(String carType);
+	public int getNumberOfReservationsForCarType(String carType) throws RemoteException;
 }
